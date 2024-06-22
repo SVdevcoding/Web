@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вештини</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="vestini.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="menu-wrapper">
+        <input type="checkbox" name="" id="menuBox">
+        <label class="retract" for="menuBox"><img src="icons/less-than-solid.svg"></label>
+        <div class="menu">
+            <div class="personal-info">
+                <img src="img.jpg" alt="" srcset="">
+                <h3>Стефан Велков</h3>
+            </div>
+            <div class="child-menu">
+                <ul>
+                    <li onclick="document.location.href='index.html';"><p>Биографија</p> <img src="icons/user-solid.svg"></li>
+                    <li onclick="document.location.href='obrazovanie.html';"><p>Образование</p> <img src="icons/user-graduate-solid.svg"></li>
+                    <li onclick="document.location.href='vestini.html';"><p>Вештини</p> <img src="icons/lightbulb-regular.svg"></li>
+                    <li onclick="document.location.href='contact.html';"><p>Контакт</p> <img src="icons/envelope-regular.svg"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="cards viewpoint active">
+            <h1>Вештини</h1>
+            <svg class="arrows">
+                <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
+        </div>
+        <div class="cards">
+            <div class="card-content">
+                <h1>Програмирање и управување со бази на податоци</h1>
+                <div class="procenti">
+                    <div class='container'>
+                        <svg width="100" height="100" class="chart-container">
+                            <circle cx="50" cy="50" r="45" class="back" fill="none"></circle>
+                            <circle cx="50" cy="50" r="45" class="front fill html" fill="none"></circle>
+
+                            <g class="text">
+                                <text x="50" y="50" alignment-baseline="central" text-anchor="middle" id="percentage">90%</text>
+                                <text x="50" y="150" alignment-baseline="central" text-anchor="middle" id="percentage">HTML</text>
+                            </g>
+                        </svg>
+                        <svg width="100" height="100" class="chart-container">
+                            <circle cx="50" cy="50" r="45" class="back" fill="none"></circle>
+                            <circle cx="50" cy="50" r="45" class="front fill css" fill="none"></circle>
+
+                            <g class="text">
+                                <text x="50" y="50" alignment-baseline="central" text-anchor="middle" id="percentage">95%</text>
+                                <text x="50" y="150" alignment-baseline="central" text-anchor="middle" id="percentage">CSS</text>
+                            </g>
+                        </svg>
+                        <svg width="100" height="100" class="chart-container">
+                            <circle cx="50" cy="50" r="45" class="back" fill="none"></circle>
+                            <circle cx="50" cy="50" r="45" class="front fill js" fill="none"></circle>
+
+                            <g class="text">
+                                <text x="50" y="50" alignment-baseline="central" text-anchor="middle" id="percentage">70%</text>
+                                <text x="50" y="150" alignment-baseline="central" text-anchor="middle" id="percentage">JavaScript</text>
+                            </g>
+                        </svg>
+                        <svg width="100" height="100" class="chart-container">
+                            <circle cx="50" cy="50" r="45" class="back" fill="none"></circle>
+                            <circle cx="50" cy="50" r="45" class="front fill php" fill="none"></circle>
+
+                            <g class="text">
+                                <text x="50" y="50" alignment-baseline="central" text-anchor="middle" id="percentage">85%</text>
+                                <text x="50" y="150" alignment-baseline="central" text-anchor="middle" id="percentage">PHP</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <p>Во врска со веб програмирањето имам познавање на програмските јазици HTML, CSS, JavaScript и PHP додека од другите програмските јазици имам познавање на јазикот C++. Имам и добро познавање на mySQL системот за управување со бази на податоци. Со помош на овие вештини успеав да направам веб апликација како проектна задача за матура.</p>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card-content">
+                <h1>Мултимедијални алатки</h1>
+                <div>
+                    <p>Имам познавање на најразлични мултимедијални алатки кој сужат за обработка на слики и видеа, меѓу овие алатки спаѓаат:</p>
+                    <ul>
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Ilustrator</li>
+                        <li>Adobe Premiere pro</li>
+                    </ul>
+                </div>
+
+                <img src="adobe.jpg">
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card-content">
+                <h1>Изработка на системи со микроконтролери</h1>
+                <img src="Arduino_Logo.svg.png" class="arduino">
+                <p>За враме на моето средно образование се запознав и со дизајнирање и изработка на најразлични автоматизирани системи со помош на Arduino микроконтролерите, како и нивно програмирање. Ваквите изработки ми помогнаа подобро да го разберам управувањето со автоматизираните системи. </p>
+
+            </div>
+
+        </div>
+
+</body>
+<script >
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.cards');
+        let i = 0;
+        let lastScrollTime = 0;
+        let intervalID = null;
+
+        function debounceScroll(event) {
+
+            const now = Date.now();
+            if (now - lastScrollTime >= 500) {
+                lastScrollTime = now;
+                cards.forEach(card => {
+                    card.classList.remove('active');
+                });
+
+                if (event.deltaY > 0) {
+                    if (i < cards.length - 1) {
+                        i++;
+                        cards[i].classList.add("viewpoint");
+                    }
+                } else if (event.deltaY < 0) {
+                    if (i > 0) {
+                        cards[i].classList.remove("viewpoint");
+                        i--;
+                    }
+                }
+                cards[i].classList.add('active');
+                if (i == 1) {
+                    cards[i].querySelector(".front").classList.add("fill");
+                }
+            }
+        }
+
+        window.addEventListener('wheel', debounceScroll);
+    });
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Образование</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="obrazovanie.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="menu-wrapper">
+        <input type="checkbox" name="" id="menuBox">
+        <label class="retract" for="menuBox"><img src="icons/less-than-solid.svg"></label>
+        <div class="menu">
+            <div class="personal-info">
+                <img src="img.jpg" alt="" srcset="">
+                <h3>Стефан Велков</h3>
+            </div>
+            <div class="child-menu">
+                <ul>
+                    <li onclick="document.location.href='index.html';"><p>Биографија</p> <img src="icons/user-solid.svg"></li>
+                    <li onclick="document.location.href='obrazovanie.html';"><p>Образование</p> <img src="icons/user-graduate-solid.svg"></li>
+                    <li onclick="document.location.href='vestini.html';"><p>Вештини</p> <img src="icons/lightbulb-regular.svg"></li>
+                    <li onclick="document.location.href='contact.html';"><p>Контакт</p> <img src="icons/envelope-regular.svg"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="slides">
+        <div class="div1">
+            <button class="kopce1" onclick="up()" ><img src="icons/chevron-down-solid.svg" alt="" srcset="" style="transform: rotateZ(180deg)"></button>
+            <div class="divcont" id="divcont">
+                <div class="poddiv obrazovanie">
+                <h1>ОБРАЗОВАНИЕ</h1>
+            </div>
+                <div class="poddiv natprevari">
+                    <h1>НАТПРЕВАРИ</h1>
+                </div>
+                <div class="poddiv praksa">
+                    <h1>ПРАКСА</h1>
+                </div>
+                <div class="poddiv proekti">
+                    <h1>ПРОЕКТИ</h1>
+                </div>
+
+            </div>
+            <button class="kopce2" onclick="down()"><img src="icons/chevron-down-solid.svg" alt="" srcset=""></button>
+        </div>
+
+
+        <div class="div2" id="div2">
+            <div class="poddiv1">
+            <p>Основно училиште имам завршено во ОУ „Рајко Жинзифов“ - Драчево, додека средно образование со просек 5.0 завршив во СЕТУ „Михајло Пупин“ - Скопје, смер Компјутерска техника и автоматика. Високото образование го продолжив на Факултетот за информатички науки и компјутерско инженерство.</p>
+        </div>
+            <div class="poddiv1 "><p>Имам учество на регионален и државен натпревар по предметите: Објектно ориентално програмирање, Дигитални системи, Процесно управување и Системи за автоматско управување и регулација. На регионалниот натпревар учествуваа градовите од западна Македонија и се одржуваше во Гостивар, таму освоив прво место. Додека Државниот натпревар се одржуваше во Велес и во него учествуваа учениците кој го поминале регионалниот натпревар меѓу кој бев и јас. На државниот натпревар завршив на четврто место. </p></div>
+            <div class="poddiv1"><p>Во втора година средно образованије учествував на еден од проектите на Erasmus+ кој беше поддржан од страна на фондацијата Никола Кљусев. Целта на проектот беше да испратат неколку ученици на 15 дневна пракса во компанијата Телеком. За време на оваа пракса од менторите научив многу работи за интернет мрежата и нејзиното поврзување. </p></div>
+            <div class="poddiv1"><p>Во текот на средното образование изработив многу проекти поврзани со веб програмирањето и преку нив научив многу начини за уредување на веб страните како и нивната функционалност.</p></div>
+        </div>
+        </div>
+</div>
+
+</body>
+<script>
+    var div = document.getElementById("divcont");
+    var div2 = document.getElementById("div2");
+    function down(){
+
+        div.scrollTop += div.clientHeight;
+        setTimeout(() =>{div2.scrollTop += div2.clientHeight;}, 300);
+    }
+    function up(){
+        div.scrollTop -= div.clientHeight;
+        setTimeout(() =>{div2.scrollTop -= div2.clientHeight;}, 300);
+    }
+
+</script>
+</html>

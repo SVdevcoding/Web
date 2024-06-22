@@ -1,0 +1,173 @@
+.content{
+    position: relative;
+    overflow: hidden;
+
+}
+.cards{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100%;
+    transition: all .5s ease-out;
+    opacity: 0;
+}
+.cards:first-of-type {
+    color: white;
+    text-shadow: 0 1px 10px #00000085;
+    font-size: 40px;
+}
+
+.viewpoint{
+    top: 0%;
+    /*background: rebeccapurple;*/
+}
+.active{
+    opacity: 1;
+}
+.card-content{
+    width: 70%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: justify;
+    box-shadow: 0px 10px 30px #00000024;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 30px;
+    color: #000000ab;
+    background: white;
+}
+.card-content h1{
+    grid-column: 1/3;
+    text-align: center;
+}
+.card-content ul{
+    line-height: 25px;
+}
+.card-content img{
+    width: 100%;
+}
+.arduino{
+    box-sizing: border-box;
+    padding: 50px;
+    padding-top: 15px;
+}
+.card-content p{
+    font-size: 20px;
+}
+/* scroll down*/
+
+.arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 100px;
+}
+
+.arrows path {
+    stroke: #000;
+    fill: transparent;
+    stroke-width: 1px;
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow
+{
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+}
+
+.arrows path.a1 {
+    animation-delay:-1s;
+    -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+    animation-delay:-0.5s;
+    -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+    animation-delay:0s;
+    -webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+/*procenti */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+.container {
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    flex-wrap: wrap;
+}
+.container .chart-container {
+    padding: 10px;
+    transform: scale(0.5);
+    overflow: visible;
+}
+.container .chart-container .back {
+    stroke: #8D99AE;
+    stroke-width: 10;
+}
+.container .chart-container .front {
+    stroke: #08415C;
+    stroke-width: 10;
+    stroke-linecap: round;
+
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+.container .chart-container .html {
+    stroke-dasharray: 230;
+}
+.container .chart-container .css {
+    stroke-dasharray: 250;
+}
+.container .chart-container .js {
+    stroke-dasharray: 170.84;
+}
+.container .chart-container .php {
+    stroke-dasharray: 210;
+}
+.container .chart-container .text {
+    font-size: 32px;
+    fill: #063045;
+    opacity: 0;
+    transform: translateY(30%);
+    animation: display 2s forwards;
+}
+.fill{
+    animation: fill 2s reverse;
+}
+@keyframes fill {
+    to {
+        stroke-dasharray: 0, 1000000;
+    }
+}
+@keyframes display {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.procenti{
+    display: flex;
+
+   justify-content: center;
+}
